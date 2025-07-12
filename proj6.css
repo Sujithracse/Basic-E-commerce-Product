@@ -1,0 +1,22 @@
+.cart {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1rem;
+  background-color: #ffc107;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 200px;
+}
+
+.cart-items {
+  margin-top: 10px;
+  background-color: #fff8dc;
+  border: 1px solid #e6c200;
+  padding: 8px;
+  border-radius: 5px;
+  max-height: 150px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}

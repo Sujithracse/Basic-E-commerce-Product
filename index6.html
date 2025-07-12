@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Listing</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Online Gadget Store</h1>
+    <div class="cart">
+      🛒 Cart: <span id="cart-count">0</span>
+      <div id="cart-items" class="cart-items"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="product-list">
+      <!-- Product 1 -->
+      <article class="product">
+        <h2>Smartphone X100</h2>
+        <p class="description">A powerful smartphone with a sleek design and fast performance.</p>
+        <p class="price">Price: ₹30,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product">
+        <h2>Wireless Headphones</h2>
+        <p class="description">High-quality sound with noise cancellation and 20-hour battery life.</p>
+        <p class="price">Price: ₹5,000</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </article>
+
+      <!-- Product 3 (Sold Out) -->
+      <article class="product sold-out">
+        <h2>Smart Watch Pro</h2>
+        <p class="description">Track your fitness, notifications, and more with style.</p>
+        <p class="price">Price: ₹6,999</p>
+        <p class="sold-out-text" aria-label="Sold Out">Sold Out</p>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="product">
+        <h2>Laptop Bag</h2>
+        <p class="description">Stylish and durable laptop bag with multiple compartments.</p>
+        <p class="price">Price: ₹1,500</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </article>
+
+      <!-- Product 5 -->
+      <article class="product">
+        <h2>USB-C Hub</h2>
+        <p class="description">Expand your device with HDMI, USB, and SD card ports.</p>
+        <p class="price">Price: ₹999</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Online Gadget Store</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    let cartCount = 0;
+    const cartCountElement = document.getElementById("cart-count");
+    const cartItemsElement = document.getElementById("cart-items");
+    const buttons = document.querySelectorAll(".add-to-cart");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const productName = button.closest(".product").querySelector("h2").textContent;
+        cartCount++;
+        cartCountElement.textContent = cartCount;
+
+        // Create and display new cart item
+        const item = document.createElement("p");
+        item.textContent = "✔ " + productName;
+        cartItemsElement.appendChild(item);
+      });
+    });
+  </script>
+</body>
+</html>
